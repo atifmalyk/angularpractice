@@ -1,6 +1,28 @@
-<p>rooms {{title}}</p>
+<p>rooms {{ title }}</p>
 <div [innerText]="numberOfRooms"></div>
-@for (user of users; track user.id) {
-    <p>{{user.name}}</p>
-}
 
+<!-- Using Directives -->
+<!-- *ngIf -->
+
+<p *ngIf="rooms.isRoomHidden === false">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto,
+  dignissimos.
+</p>
+
+<table>
+  <tr>
+    <th>Even Odd</th>
+    <th>Room Number</th>
+    <th>Room Description</th>
+    <th>Room Price</th>
+    <th>Room Type</th>
+  </tr>
+  <tr *ngFor="let roomDetail of roomDetails; let e=even; ; let o=odd">
+    <td>{{e ? "Even" : "Odd"}}</td>
+    <td>{{roomDetail.roomNumber}}</td>
+    <td>{{roomDetail.roomDescription}}</td>
+    <td>{{roomDetail.roomType}}</td>
+    <td>{{roomDetail.roomPrice}}</td>
+
+  </tr>
+</table>
