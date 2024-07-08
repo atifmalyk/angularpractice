@@ -4,7 +4,8 @@
 <!-- Using Directives -->
 <!-- *ngIf -->
 
-<p *ngIf="rooms.isRoomHidden === false">
+<!-- we can directly style using ngStyle -->
+<p [ngStyle]="{'color': rooms.isRoomHidden ? 'red' : 'green' }" *ngIf="rooms.isRoomHidden === true">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto,
   dignissimos.
 </p>
@@ -17,12 +18,15 @@
     <th>Room Price</th>
     <th>Room Type</th>
   </tr>
-  <tr *ngFor="let roomDetail of roomDetails; let e=even; ; let o=odd">
-    <td>{{e ? "Even" : "Odd"}}</td>
-    <td>{{roomDetail.roomNumber}}</td>
-    <td>{{roomDetail.roomDescription}}</td>
-    <td>{{roomDetail.roomType}}</td>
-    <td>{{roomDetail.roomPrice}}</td>
-
+  <!-- using directives ng class , ngFor -->
+  <tr
+    [ngClass]="e ? 'ngEven' : 'ngOdd'"
+    *ngFor="let roomDetail of roomDetails; let e = even; let o = odd"
+  >
+    <td>{{ e ? "Even" : "Odd" }}</td>
+    <td>{{ roomDetail.roomNumber }}</td>
+    <td>{{ roomDetail.roomDescription }}</td>
+    <td>{{ roomDetail.roomType }}</td>
+    <td>{{ roomDetail.roomPrice }}</td>
   </tr>
 </table>

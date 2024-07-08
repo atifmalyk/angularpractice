@@ -2,11 +2,14 @@ import { Component } from '@angular/core';
 import { RoomDetails, Rooms } from './rooms';
 import {NgIf} from '@angular/common';
 import {NgFor} from '@angular/common';
+import {NgClass} from '@angular/common';
+import {NgStyle} from '@angular/common';
+
 
 @Component({
   selector: 'app-rooms',
   standalone: true,
-  imports: [NgIf,NgFor],
+  imports: [NgIf,NgFor,NgClass,NgStyle],
   templateUrl: './rooms.component.html',
   styleUrl: './rooms.component.css'
 })
