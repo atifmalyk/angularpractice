@@ -43,3 +43,10 @@ Built in Directives
 *ngSwitch
 
 <!-- To Implememnt ng if we need to import ngif module from Common and include it in the imports of the related components -->
+
+## Pipes
+
+Pipes are used to chnage the objects without changig the original object.
+DateTime Pipe
+toUpperCase pipe 
+etc.

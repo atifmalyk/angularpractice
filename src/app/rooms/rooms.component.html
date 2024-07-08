@@ -19,14 +19,18 @@
     <th>Room Type</th>
   </tr>
   <!-- using directives ng class , ngFor -->
+   <!-- We can use slice to decide how much records of an array or object we can use -->
   <tr
     [ngClass]="e ? 'ngEven' : 'ngOdd'"
-    *ngFor="let roomDetail of roomDetails; let e = even; let o = odd"
+    
+    *ngFor="let roomDetail of roomDetails | slice : 0:1; let e = even; let o = odd"
   >
+  <!-- using pipes -->
+   <!-- we can use json pipe for debugging the json -->
     <td>{{ e ? "Even" : "Odd" }}</td>
-    <td>{{ roomDetail.roomNumber }}</td>
+    <td>{{ roomDetail.roomNumber | percent  }}</td>
     <td>{{ roomDetail.roomDescription }}</td>
-    <td>{{ roomDetail.roomType }}</td>
-    <td>{{ roomDetail.roomPrice }}</td>
+    <td>{{ roomDetail.roomType | lowercase  }}</td>
+    <td>{{ roomDetail.roomPrice | currency : 'INR' }}</td>
   </tr>
 </table>

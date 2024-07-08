@@ -7,8 +7,8 @@ isRoomHidden : boolean
 
 export interface RoomDetails {
  roomNumber : number
- roomDescription: String
- roomType :String
+ roomDescription: string
+ roomType :string
  roomPrice :number
 
 }

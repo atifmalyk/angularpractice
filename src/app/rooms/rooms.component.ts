@@ -4,12 +4,14 @@ import {NgIf} from '@angular/common';
 import {NgFor} from '@angular/common';
 import {NgClass} from '@angular/common';
 import {NgStyle} from '@angular/common';
+import { CommonModule } from '@angular/common';
+
 
 
 @Component({
   selector: 'app-rooms',
   standalone: true,
-  imports: [NgIf,NgFor,NgClass,NgStyle],
+  imports: [NgIf,NgFor,NgClass,NgStyle,CommonModule],
   templateUrl: './rooms.component.html',
   styleUrl: './rooms.component.css'
 })
