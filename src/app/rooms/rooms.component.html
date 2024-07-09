@@ -10,27 +10,33 @@
   dignissimos.
 </p>
 
-<table>
-  <tr>
-    <th>Even Odd</th>
-    <th>Room Number</th>
-    <th>Room Description</th>
-    <th>Room Price</th>
-    <th>Room Type</th>
-  </tr>
-  <!-- using directives ng class , ngFor -->
-   <!-- We can use slice to decide how much records of an array or object we can use -->
-  <tr
-    [ngClass]="e ? 'ngEven' : 'ngOdd'"
-    
-    *ngFor="let roomDetail of roomDetails | slice : 0:1; let e = even; let o = odd"
-  >
-  <!-- using pipes -->
-   <!-- we can use json pipe for debugging the json -->
-    <td>{{ e ? "Even" : "Odd" }}</td>
-    <td>{{ roomDetail.roomNumber | percent  }}</td>
-    <td>{{ roomDetail.roomDescription }}</td>
-    <td>{{ roomDetail.roomType | lowercase  }}</td>
-    <td>{{ roomDetail.roomPrice | currency : 'INR' }}</td>
-  </tr>
-</table>
+
+<!-- <p [hidden]="isToggled">login works!</p> -->
+<accordion>
+  <accordion-group heading="Static Header">
+    This content is straight in the template.
+  </accordion-group>
+  <accordion-group heading="Another group">
+    <p>Some content</p>
+  </accordion-group>
+  <accordion-group heading="Another group">
+    <p>Some content</p>
+  </accordion-group>
+  <accordion-group heading="Another group">
+    <p>Some content</p>
+  </accordion-group>
+</accordion>
+<button type="button" class="btn btn-primary"
+tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+Simple demo
+</button>
+
+<!-- sending data to child -->
+<div>
+<!-- src/app/rooms/rooms.component.html -->
+<!-- src/app/rooms/rooms.component.html -->
+<app-room-list
+  [roomList]="roomDetails"
+  [numberOfRooms]="numberOfRooms"
+  (selectedRoom)="handleRoomSelection($event)">
+</app-room-list>

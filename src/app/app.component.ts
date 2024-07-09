@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { RoomsComponent } from "./rooms/rooms.component";
-import { LoginComponent } from './login/login.component';
 import { CommonModule } from '@angular/common';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
@@ -12,7 +11,7 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, RoomsComponent,LoginComponent,CommonModule,BsDropdownModule,AccordionModule]
+    imports: [RouterOutlet, RoomsComponent,CommonModule,BsDropdownModule,AccordionModule]
 })
 export class AppComponent implements OnInit{
   ngOnInit(): void {

@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+/* We can use ngClass if we want multiple classes style at a time on condition bases */
+
+.ngEven{
+    background-color: steelblue;
+}
+.ngOdd{ background-color:crimson; }
